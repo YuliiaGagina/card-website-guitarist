@@ -447,7 +447,17 @@ html {
   top: 129px;
   right: 80px;
   z-index: 1;
+   animation: roll 2s linear infinite;
 }
+  @keyframes roll {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
 
 .main-section__second-elipse {
   position: absolute;
@@ -494,7 +504,16 @@ html {
   top: 150px;
   left: -50px;
   z-index: 2;
+   animation: move-to-position 2s ease-out forwards;
 }
+  @keyframes move-to-position {
+      from {
+        transform: rotate(90deg) translateX(0); 
+      }
+      to {
+        transform: rotate(-55deg) translateX(0px); 
+      }
+    }
 
 .left-wrapper__rectangle-orange {
   width: 618.43px;
@@ -507,6 +526,7 @@ html {
   transform: rotate(-50.81deg);
   position: absolute;
   z-index: 3;
+   animation: move-to-position 2s ease-out forwards;
 }
 
 .left-wrapper__rectangle-grey {
@@ -520,6 +540,7 @@ html {
   border-radius: 100px;
   transform: rotate(-36.15deg);
   z-index: 1;
+   animation: move-to-position 2s ease-out forwards;
 }
 
 .right-wrapper {
@@ -663,6 +684,21 @@ html {
   flex-wrap: wrap;
   align-items: flex-end;
   position: relative;
+    animation: appear 0.8s ease-out forwards; 
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) translateY(50px);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.1) translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
 }
 
 .cards-item__img {
@@ -807,6 +843,30 @@ html {
   top: 140px;
   left: 110px;
   z-index: -1;
+   animation: pulseAndMove 5s ease-in-out infinite;
+}
+
+@keyframes pulseAndMove {
+  0% {
+    transform: scale(1) translateX(0); 
+    box-shadow: 0 0 20px rgba(255, 107, 107, 0.5);
+  }
+  25% {
+    transform: scale(1.1) translateX(300px); 
+    box-shadow: 0 0 30px rgba(255, 107, 107, 0.7);
+  }
+  50% {
+    transform: scale(1) translateX(0);
+    box-shadow: 0 0 20px rgba(255, 107, 107, 0.5);
+  }
+  75% {
+    transform: scale(1.1) translateX(-100px);
+    box-shadow: 0 0 30px rgba(255, 107, 107, 0.7);
+  }
+  100% {
+    transform: scale(1) translateX(0); 
+    box-shadow: 0 0 20px rgba(255, 107, 107, 0.5);
+  }
 }
 
 .third-section__figure {
